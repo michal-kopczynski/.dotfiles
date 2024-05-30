@@ -142,10 +142,10 @@ set_from_resource $i3-wm.binding.focus_child i3-wm.binding.focus_child z
 bindsym $mod+$i3-wm.binding.focus_child focus child
 
 ## Navigate // Relative Window // <> ↑ ↓ ← → ##
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 ## Navigate // Relative Window // <> k j h l ##
 set_from_resource $i3-wm.binding.left i3-wm.binding.left h
@@ -224,10 +224,10 @@ bindsym $mod+$i3-wm.binding.scratchpad scratchpad show
 ###############################################################################
 
 ## Modify // Window Position // <><Shift> ↑ ↓ ← → ##
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 ## Modify // Window Position // <><Shift> k j h l ##
 set_from_resource $i3-wm.binding.move_left i3-wm.binding.move_left Shift+h
@@ -246,14 +246,14 @@ bindsym $mod+Ctrl+Shift+Up move workspace to output up
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
 
 ## Modify // Containing Workspace // <><Ctrl><Shift> k j h l ##
-#set_from_resource $i3-wm.binding.take_left i3-wm.binding.take_left Ctrl+Shift+h
-#set_from_resource $i3-wm.binding.take_right i3-wm.binding.take_right Ctrl+Shift+l
-#set_from_resource $i3-wm.binding.take_up i3-wm.binding.take_up Ctrl+Shift+k
-#set_from_resource $i3-wm.binding.take_down i3-wm.binding.take_down Ctrl+Shift+j
-#bindsym $mod+$i3-wm.binding.take_left move workspace to output left
-#bindsym $mod+$i3-wm.binding.take_down move workspace to output down
-#bindsym $mod+$i3-wm.binding.take_up move workspace to output up
-#bindsym $mod+$i3-wm.binding.take_right move workspace to output right
+set_from_resource $i3-wm.binding.take_left i3-wm.binding.take_left Ctrl+Shift+h
+set_from_resource $i3-wm.binding.take_right i3-wm.binding.take_right Ctrl+Shift+l
+set_from_resource $i3-wm.binding.take_up i3-wm.binding.take_up Ctrl+Shift+k
+set_from_resource $i3-wm.binding.take_down i3-wm.binding.take_down Ctrl+Shift+j
+bindsym $mod+$i3-wm.binding.take_left move workspace to output left
+bindsym $mod+$i3-wm.binding.take_down move workspace to output down
+bindsym $mod+$i3-wm.binding.take_up move workspace to output up
+bindsym $mod+$i3-wm.binding.take_right move workspace to output right
 
 ## Modify // Vertical Window Orientation // <> v ##
 set_from_resource $i3-wm.binding.split_v i3-wm.binding.split_v v
