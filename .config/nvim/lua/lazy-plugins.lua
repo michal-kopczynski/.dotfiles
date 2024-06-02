@@ -51,6 +51,8 @@ require('lazy').setup({
 
   require 'plugins/alpha',
 
+  require 'plugins/alternate-toggler',
+
   require 'plugins/nvim-tmux-navigator',
 
   require 'plugins/obsidian',
