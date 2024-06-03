@@ -1,6 +1,10 @@
+.env
+rc/pro*
+
 tags
 test.sh
 .luarc.json
 
 spell/
 lazy-lock.json
+
