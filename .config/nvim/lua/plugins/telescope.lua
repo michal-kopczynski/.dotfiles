@@ -63,13 +63,13 @@ return {
         -- },
         pickers = {
           live_grep = {
-            file_ignore_patterns = { 'node_nodules', '/git', '.venv' },
+            file_ignore_patterns = { 'node_nodules', '.git/', '^./.git/', '.venv' },
             additional_args = function(_)
               return { '--hidden' }
             end,
           },
           find_files = {
-            file_ignore_patterns = { 'node_nodules', '/git', '.venv' },
+            file_ignore_patterns = { 'node_nodules', '.git/', '^./.git/', '.venv' },
             hidden = true,
           },
         },

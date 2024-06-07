@@ -1,3 +1,4 @@
+-- ChatGpt plugin
 return {
   'robitx/gp.nvim',
   config = function()

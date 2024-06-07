@@ -1,3 +1,4 @@
+-- Greeter screen
 return {
   'goolord/alpha-nvim',
   dependencies = {
