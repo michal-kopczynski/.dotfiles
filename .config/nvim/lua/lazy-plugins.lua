@@ -59,6 +59,8 @@ require('lazy').setup({
 
   require 'plugins/oil',
 
+  require 'plugins/go',
+
   require 'plugins/gp',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the

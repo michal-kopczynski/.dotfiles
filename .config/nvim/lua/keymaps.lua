@@ -48,4 +48,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.keymap.set('n', '<leader>ce', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>')
 -- vim: ts=2 sts=2 sw=2 et
