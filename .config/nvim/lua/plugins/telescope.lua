@@ -72,6 +72,9 @@ return {
             file_ignore_patterns = { 'node_nodules', '.git/', '^./.git/', '.venv' },
             hidden = true,
           },
+          buffers = {
+            sort_lastused = true,
+          },
         },
         extensions = {
           ['ui-select'] = {
