@@ -85,6 +85,7 @@ plugins=(
   virtualenv
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-history-substring-search
   fzf
 )
 
@@ -115,6 +116,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+ 
+
+HISTORY_SUBSTRING_SEARCH="true"
+HIST_FIND_NO_DUPS=1
+HIST_IGNORE_DUPS=ignorespace
 
 
 export NVM_DIR="$HOME/.nvm"
