@@ -45,10 +45,10 @@ return {
         name = 'dev',
         path = '~/vaults/dev',
       },
-      {
-        name = 'pro1',
-        path = '~/vaults/pro1',
-      },
+      -- {
+      --   name = 'pro1',
+      --   path = '~/vaults/pro1',
+      -- },
     },
 
     daily_notes = {
