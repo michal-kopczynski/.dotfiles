@@ -24,7 +24,7 @@ return {
 
     { '<leader>os', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Quick Switch', mode = 'n' },
     { '<leader>ob', '<cmd>ObsidianBacklinks<cr>', desc = 'Show location list of backlinks', mode = 'n' },
-    { '<leader>ot', '<cmd>ObsidianTemplate<cr>', desc = 'Follow link under cursor', mode = 'n' },
+    { '<leader>ot', '<cmd>ObsidianTemplate<cr>', desc = 'Insert a template from the templates folder', mode = 'n' },
     { '<leader>op', '<cmd>ObsidianPasteImg<cr>', desc = 'Paste image from clipboard under cursor', mode = 'n' },
     { '<leader>of', '<cmd>ObsidianFollowLink<cr>', desc = 'follows note under cursor', mode = 'n' },
     { '<leader>oe', '<cmd>ObsidianExtractNote<cr>', desc = 'Extracts visually selected note creates a new one with link', mode = 'n' },
