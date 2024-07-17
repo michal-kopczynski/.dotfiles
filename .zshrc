@@ -142,6 +142,7 @@ unsetopt share_history
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin/linux-utils
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
@@ -165,7 +166,7 @@ if [ -f ~/rc/pro1/rc.sh ]; then
 fi
 
 
-source ~/bin/tmux-sessions.sh
+source ~/bin/linux-utils/tmux-sessions.sh
 
 # Disable caps lock
 setxkbmap -option caps:escape
