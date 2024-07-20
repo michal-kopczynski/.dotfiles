@@ -172,7 +172,7 @@ source ~/bin/linux-utils/tmux-sessions.sh
 setxkbmap -option caps:escape
 
 #set +x
-source ~/.kubech/kubech
+#source ~/.kubech/kubech
 autoload -U compinit && compinit
 
 
