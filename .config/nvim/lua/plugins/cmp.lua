@@ -110,7 +110,7 @@ return {
         },
       }
 
-      -- configs for buffer searching '/' and command mode completions
+      -- configs for buffer searching '/'
       -- https://github.com/hrsh7th/cmp-cmdline
       -- `/` cmdline setup.
       cmp.setup.cmdline('/', {
@@ -120,18 +120,20 @@ return {
         },
       })
 
-      -- `:` cmdline setup.
+      -- config for command mode completions
+      -- Support both cycling through history and completions
+      -- https://github.com/hrsh7th/cmp-cmdline/issues/108
       cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
+        -- C-n/C-p cycle through completions if a character has been typed and through
+        -- command history if not (from https://www.reddit.com/r/neovim/comments/v5pfmy/comment/ibb61w3/)
+        mapping = cmp.mapping.preset.cmdline {
+          ['<C-n>'] = { c = cmp.mapping.select_next_item() },
+          ['<C-p>'] = { c = cmp.mapping.select_prev_item() },
+        },
         sources = cmp.config.sources({
           { name = 'path' },
         }, {
-          {
-            name = 'cmdline',
-            option = {
-              ignore_cmds = { 'Man', '!' },
-            },
-          },
+          { name = 'cmdline' },
         }),
       })
     end,
