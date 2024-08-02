@@ -220,5 +220,14 @@ return {
       }
     end,
   },
+  -- https://www.reddit.com/r/golang/comments/1cifv54/templ_formatter_causes_weird_formatting_in_neovim/
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      formatters_by_ft = {
+        templ = { 'templ' },
+      },
+    },
+  },
 }
 -- vim: ts=2 sts=2 sw=2 et
