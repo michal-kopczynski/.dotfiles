@@ -93,6 +93,16 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Templ support - can it be moved somewhere else?
+-- https://templ.guide/commands-and-tools/ide-support/
+-- https://github.com/vrischmann/tree-sitter-templ
+-- Also, after installing Nvim, need to run ":TSInstall templ"
+vim.filetype.add {
+  extension = {
+    templ = 'templ',
+  },
+}
+
 -- [[ Setting options ]]
 require 'options'
 

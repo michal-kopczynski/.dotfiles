@@ -1,3 +1,4 @@
+-- To read: https://www.csimm.dev/blog/nvim-plugin-configuration
 return {
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -159,6 +160,9 @@ return {
         -- clangd = {},
         gopls = {},
         templ = {},
+        html = {},
+        htmx = {},
+        tailwindcss = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
