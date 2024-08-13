@@ -61,7 +61,34 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          -- map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          --
+          -- Temporary solution for jumping to Templ files (instead of generated go files)
+          -- https://github.com/a-h/templ/issues/387
+          local go_to_definition = function()
+            if vim.bo.filetype == 'go' then
+              vim.lsp.buf.definition {
+                on_list = function(options)
+                  if options == nil or options.items == nil or #options.items == 0 then
+                    return
+                  end
+
+                  local targetFile = options.items[1].filename
+                  local prefix = string.match(targetFile, '(.-)_templ%.go$')
+
+                  if prefix then
+                    options.items[1].filename = prefix .. '.templ'
+                  end
+
+                  vim.fn.setqflist({}, ' ', options)
+                  vim.api.nvim_command 'cfirst'
+                end,
+              }
+            else
+              vim.lsp.buf.definition()
+            end
+          end
+          map('gd', go_to_definition, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
