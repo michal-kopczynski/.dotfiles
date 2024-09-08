@@ -59,6 +59,8 @@ require('lazy').setup({
 
   require 'plugins/oil',
 
+  require 'plugins/markdown',
+
   require 'plugins/go',
 
   require 'plugins/gp',

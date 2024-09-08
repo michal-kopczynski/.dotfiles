@@ -40,6 +40,8 @@ return {
     -- see below for full list of optional dependencies 👇
   },
   opts = {
+    ui = { enable = false }, -- Disable UI as using render-markdown plugin instead
+
     workspaces = {
       {
         name = 'dev',

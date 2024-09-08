@@ -185,6 +185,7 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
+        -- marksman = {}, https://github.com/artempyanykh/marksman - instead using render-markdown.nvim
         gopls = {},
         templ = {},
         html = {},
