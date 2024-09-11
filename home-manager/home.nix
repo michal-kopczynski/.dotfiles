@@ -25,6 +25,7 @@
     pkgs.yazi
 
     pkgs.nerdfetch
+    # pkgs.kitty - doesn't work when installed using nix - https://github.com/NixOS/nixpkgs/issues/80936
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
