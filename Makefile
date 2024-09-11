@@ -8,5 +8,5 @@ stow-delete:
 	stow -D .
 
 .PHONY: switch
-update:
+switch:
 	(cd home-manager && home-manager switch --flake .#michal)
