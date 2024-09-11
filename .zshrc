@@ -175,4 +175,6 @@ setxkbmap -option caps:escape
 #source ~/.kubech/kubech
 autoload -U compinit && compinit
 
-
+# This must be sourced in your .bashrc or whatever shell you're using.
+# In the future we can get home-manager to do this for us, but bootstrapping for now...
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
