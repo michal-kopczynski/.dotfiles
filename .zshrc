@@ -85,7 +85,7 @@ plugins=(
   virtualenv
   zsh-syntax-highlighting
   zsh-autosuggestions
-  zsh-history-substring-search
+  #zsh-history-substring-search
   fzf
 )
 
