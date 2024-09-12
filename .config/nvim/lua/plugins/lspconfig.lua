@@ -58,6 +58,15 @@ return {
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          -- TODO: not able to make it work (confirm selection with ctrl enter): https://www.reddit.com/r/neovim/comments/12foks4/need_some_help_to_find_why_enter_does_not_pick/
+          -- local cmp_mappings = lsp.defaults.cmp_mappings {
+          --   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+          --   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+          --   ['<cr>'] = cmp.mapping.confirm { select = true },
+          --   ['<C-Space>'] = cmp.mapping.complete(),
+          -- }
+          -- map('<cr>', cmp.mapping.confirm { select = true }, 'confirm')
+
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.

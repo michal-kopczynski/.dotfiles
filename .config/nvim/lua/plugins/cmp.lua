@@ -69,6 +69,23 @@ return {
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
+          -- mapping C-CR to confirm - seems to be not suppoerted? https://github.com/hrsh7th/nvim-cmp/issues/1804
+          -- ['<CR>'] = cmp.mapping.confirm { select = false },
+          -- ['<C-CR>'] = cmp.mapping.confirm { select = true },
+          --
+          -- If nothing is selected (including preselections) add a newline as usual.
+          -- If something has explicitly been selected by the user, select it.
+          -- ['<CR>'] = cmp.mapping {
+          --   i = function(fallback)
+          --     if cmp.visible() and cmp.get_active_entry() then
+          --       cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false }
+          --     else
+          --       fallback()
+          --     end
+          --   end,
+          --   s = cmp.mapping.confirm { select = true },
+          --   c = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true },
+          -- },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
