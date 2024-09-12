@@ -67,3 +67,7 @@ vim.opt.conceallevel = 1
 
 -- disable swapfile
 vim.opt.swapfile = false
+
+vim.opt.wrap = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
