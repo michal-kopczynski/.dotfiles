@@ -15,6 +15,10 @@ return {
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+    opts = {
+      transparent = true,
+      -- dim_inactive = true, -- Unfortunately, doesn't work with transparent so can't dim inactive windows when using transparent to dim inactive nvim
+    },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
