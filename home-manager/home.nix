@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./dconf.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home = {
@@ -26,6 +30,7 @@
       git
       ripgrep
       tmux
+      #stablePkgs.yazi
       yazi
 
       nerdfetch
@@ -81,10 +86,23 @@
     };
   };
 
+  programs.bat.enable = true;
+  # Example of downloading theme
+  # programs.bat.themes = {
+  #   kanagawa = {
+  #     src = pkgs.fetchFromGitHub {
+  #       owner = "obergodmar";
+  #       repo = "kanagawa-tmTheme"; # Bat uses sublime syntax for its themes
+  #       rev = "edb1e41256421a7b26348c80146bcff2c3e37f34";
+  #       sha256 = "5Gj0Jz6UUm55v5d7V7E89ujUDSn0aGsZrOMS5FXduAE=";
+  #     };
+  #     file = "Kanagawa.tmTheme";
+  #   };
+  # };
+  programs.bat.config = {
+    theme = "Dracula";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  imports = [
-    ./dconf.nix
-  ];
 }
