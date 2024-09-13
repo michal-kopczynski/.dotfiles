@@ -10,3 +10,7 @@ stow-delete:
 .PHONY: switch
 switch:
 	(cd home-manager && home-manager switch --flake .#michal)
+
+.PHONY: prune
+prune:
+	nix-store --gc
