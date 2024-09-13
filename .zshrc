@@ -168,9 +168,6 @@ fi
 
 source ~/bin/linux-utils/tmux-sessions.sh
 
-# Disable caps lock
-setxkbmap -option caps:escape
-
 #set +x
 #source ~/.kubech/kubech
 autoload -U compinit && compinit
