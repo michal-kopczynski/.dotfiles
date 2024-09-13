@@ -2,19 +2,28 @@
   description = "My Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, ... }:
     let
-      lib = nixpkgs.lib;
+      #lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs-unstable { 
+        inherit system; 
+        overlays = [
+          (final: prev: {
+            # Installing specific package from different channel
+            # yazi = (import nixpkgs-stable { system = system; }).yazi;
+          })
+        ];
+      };
     in {
       homeConfigurations = {
         michal = home-manager.lib.homeManagerConfiguration {
