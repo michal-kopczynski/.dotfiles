@@ -154,8 +154,6 @@ export PATH=$PATH:/home/michal/private/dev/kubectl-curl-plugin/bin
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
 if [ -f ~/rc/aliases.sh ]; then
 . ~/rc/aliases.sh
 fi

@@ -28,6 +28,7 @@
       file
       fzf
       git
+      neovim
       ripgrep
       tmux
       #stablePkgs.yazi
