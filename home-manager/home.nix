@@ -23,6 +23,7 @@
     # The home.packages option allows you to install Nix packages into your
     # environment.
     packages = with pkgs; [
+      atuin
       bat
       curl
       file
@@ -30,6 +31,7 @@
       git
       neovim
       ripgrep
+      tldr
       tmux
       #stablePkgs.yazi
       yazi
@@ -87,6 +89,9 @@
     };
   };
 
+  # Home manager configuration options
+  # https://nix-community.github.io/home-manager/options.xhtml
+
   programs.bat.enable = true;
   # Example of downloading theme
   # programs.bat.themes = {
@@ -102,6 +107,15 @@
   # };
   programs.bat.config = {
     theme = "Dracula";
+  };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      style = "compact";
+      inline_height = 60;
+    };
   };
 
   # Let Home Manager install and manage itself.

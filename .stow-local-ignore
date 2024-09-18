@@ -1,5 +1,6 @@
 .git
 .gitignore
+defaults
 README.md
 Makefile
 home-manager

@@ -170,6 +170,9 @@ source ~/bin/linux-utils/tmux-sessions.sh
 #source ~/.kubech/kubech
 autoload -U compinit && compinit
 
+# Sets Ctrl + r binding to overwrite default zsh history search with atuin
+eval "$(atuin init zsh)"
+
 # This must be sourced in your .bashrc or whatever shell you're using.
 # In the future we can get home-manager to do this for us, but bootstrapping for now...
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
