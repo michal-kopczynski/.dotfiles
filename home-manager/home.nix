@@ -118,6 +118,8 @@
     settings = {
       style = "compact";
       inline_height = 60;
+      search_mode_shell_up_key_binging = "directory";
+      filter_mode_shell_up_key_binding = "directory";
     };
   };
 
