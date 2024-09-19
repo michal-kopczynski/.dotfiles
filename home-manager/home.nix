@@ -92,7 +92,6 @@
   # Home manager configuration options
   # https://nix-community.github.io/home-manager/options.xhtml
 
-  programs.bat.enable = true;
   # Example of downloading theme
   # programs.bat.themes = {
   #   kanagawa = {
@@ -105,8 +104,12 @@
   #     file = "Kanagawa.tmTheme";
   #   };
   # };
-  programs.bat.config = {
-    theme = "Dracula";
+
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "Dracula";
+    };
   };
 
   programs.atuin = {
