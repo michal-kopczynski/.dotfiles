@@ -55,11 +55,23 @@
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
+    # Docs https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
     file = {
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a
       # # symlink to the Nix store copy.
       # ".screenrc".source = dotfiles/screenrc;
+      ".tmux.conf".source = ../.tmux.conf; 
+      ".vimrc".source = ../.vimrc;
+      ".zshrc".source = ../.zshrc;
+      ".config" = {
+        source = ../.config;
+        recursive = true;
+      };
+      "rc" = {
+        source = ../rc;
+        recursive = true;
+      };
 
       # # You can also set the file content immediately.
       # ".gradle/gradle.properties".text = ''
