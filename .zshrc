@@ -90,6 +90,13 @@ plugins=(
   zsh-vi-mode
 )
 
+
+ZVM_INIT_MODE=precmd
+
+# Sets Ctrl + r binding to overwrite default zsh history search with atuin
+# Do it after zvm as we want to overwrite also Ctrl+R set by that plugin
+zvm_after_init_commands+=(eval "$(atuin init zsh)")
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -170,9 +177,6 @@ source ~/bin/linux-utils/tmux-sessions.sh
 #set +x
 #source ~/.kubech/kubech
 autoload -U compinit && compinit
-
-# Sets Ctrl + r binding to overwrite default zsh history search with atuin
-eval "$(atuin init zsh)"
 
 # This must be sourced in your .bashrc or whatever shell you're using.
 # In the future we can get home-manager to do this for us, but bootstrapping for now...
