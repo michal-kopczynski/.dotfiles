@@ -83,10 +83,11 @@ plugins=(
   docker-compose
   vscode
   virtualenv
+  fzf
+# Custom plugins
   zsh-syntax-highlighting
   zsh-autosuggestions
-  #zsh-history-substring-search
-  fzf
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
