@@ -36,7 +36,7 @@
       #stablePkgs.yazi
       yazi
 
-      nerdfetch
+      neofetch
       # pkgs.kitty - doesn't work when installed using nix - https://github.com/NixOS/nixpkgs/issues/80936
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
