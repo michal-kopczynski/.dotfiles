@@ -1,0 +1,319 @@
+" Reload config cmd + shift +i
+
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+
+
+
+
+"" .ideavimrc - Matt Chapman
+
+
+"" Base Settings
+"" ========================================================
+
+set scrolloff=10
+set relativenumber
+set showmode
+set showcmd
+
+set smartcase
+set incsearch
+set hlsearch
+
+set visualbell
+
+" Use system clipboard
+set clipboard+=unnamed
+
+let mapleader = " "
+
+
+"" Plugin Settings
+"" ========================================================
+
+set surround
+set highlightedyank
+set sneak
+set nerdtree
+
+" Enable tracking of IDE Actions - Actions -> Track Action ID
+
+" Easymotion settings
+set easymotion
+set notimeout
+
+" Which-key settings
+set which-key
+let g:WhichKey_FontSize = 16
+let g:WhichKey_CommandColor = "#41ead4"
+let g:WhichKey_PrefixColor = "#f335b2"
+let g:WhichKey_SortOrder = "by_key_prefix_first"
+
+let g:WhichKeyDesc_leader = "<leader> Leader key"
+
+let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
+
+let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
+let g:WhichKeyDesc_easymotion_prefix = "<leader><leader>"
+
+"let g:WhichKeyDesc_comment = "<leader>c Comment line"
+
+let g:WhichKeyDesc_fold = "<leader>z Folding"
+let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
+let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
+
+let g:WhichKeyDesc_window = "<leader>w Window splits"
+let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
+let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
+let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
+let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
+
+
+let g:WhichKeyDesc_display = "<leader>d Display options"
+let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
+let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
+let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
+
+let g:WhichKeyDesc_action= "<leader>a Actions"
+let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
+
+let g:WhichKeyDesc_close_tab = "<leader>q Close active tab"
+
+let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
+let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename element"
+let g:WhichKeyDesc_refactoring_method = "<leader>rm Extract method"
+let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce variable"
+let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce field"
+let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change signature"
+let g:WhichKeyDesc_refactoring_all = "<leader>rr Open refactorings list"
+
+let g:WhichKeyDesc_goto = "<leader>g Go to X"
+let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
+let g:WhichKeyDesc_goto_type_declaration = "<leader>gy Go to Type Definition"
+let g:WhichKeyDesc_goto_implementation = "<leader>gi Go to Implementation"
+let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
+let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
+let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
+let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
+
+let g:WhichKeyDesc_git = "<leader>g Git operations"
+let g:WhichKeyDesc_git_commit = "<leader>gc Open Git commit dialog"
+let g:WhichKeyDesc_git_status = "<leader>gs Open Git status dialog"
+let g:WhichKeyDesc_git_branches = "<leader>gb Open Git branches list"
+
+
+
+
+"" Key mappings
+"" ========================================================
+
+inoremap jk <Esc>
+"imap jk <Esc>
+map <C-j> <Esc>
+
+" Tab navigation
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>
+
+" Pane navigation
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+
+" Jump between methods
+nnoremap [[ <Action>(MethodUp)
+nnoremap ]] <Action>(MethodDown)
+
+" Easy visual indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" Execute macro saved in 'q' register
+nnoremap qj @q
+
+" Popup navigation
+inoremap <C-j> <Action>(PopupMenu-selectNext)
+inoremap <C-k> <Action>(PopupMenu-selectPrev)
+
+" MK: doesn't work properly as triggers also vim ctrl+y action (in insert mode inserts character which is line above)
+" inoremap <C-y> <Action>(EditorChooseLookupItem)
+
+
+"" Leader commands
+"" ========================================================
+
+" Comment lines
+" map <leader>c <action>(CommentByLineComment)
+
+" Jump around with easymotion
+map <leader>j <Plug>(easymotion-s)
+
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
+
+"  Folding
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
+
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" Display options
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
+
+
+let g:WhichKeyDesc_file_nav = "<leader>s File, text and action navigation and search"
+" Actions
+let g:WhichKeyDesc_search_actions = "<leader>sa Search actions"
+" map <leader>sa <action>(ShowIntentionActions)
+map <leader>sa <action>(GotoAction)
+map <leader>as <action>(SearchEverywhere)
+
+" File navigation
+" Files/locations
+let g:WhichKeyDesc_file_nav_goto_content = "<leader>sf Search files"
+map <leader>sf <action>(GotoFile)
+let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
+map <leader><leader> <Action>(RecentFiles)
+let g:WhichKeyDesc_file_recently_changed_files = "<leader>sd Recent Changed Files"
+noremap <leader>sd :action RecentChangedFiles<CR>
+let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>sr Show recent locations"
+map <leader>sr <action>(RecentLocations)
+" Text search
+let g:WhichKeyDesc_find_in_files = "<leader>sg Find current word in files"
+map <leader>sg <action>(FindInPath)
+" this is for current file
+let g:WhichKeyDesc_find_word_at_caret = "<leader>sw Find word at caret in current file"
+noremap <leader>sw <action>(FindWordAtCaret)
+
+" ctrl + alt + c - match case
+" ctrl + alt + w - match word
+let g:WhichKeyDesc_find_in_file = "<leader>ff Find in file"
+map <leader>ff <action>(Find)
+let g:WhichKeyDesc_replace_in_file = "<leader>fr Replace in file"
+map <leader>fr <action>(Replace)
+let g:WhichKeyDesc_replace_in_files = "<leader>fp Replace in path"
+map <leader>fp <action>(ReplaceInPath)
+
+let g:WhichKeyDesc_file_new_scratch = "<leader>fs New scratch file"
+map <leader>fs <action>(NewScratchFile)
+" <leader>ss - Search Select Telscope in NeoVim
+" let g:WhichKeyDesc_file_nav_goto_contentsymotion-s) = "<leader>ss Go to Action
+" map <leader>ss <action>(GotoAction)
+
+" Close active tab
+map <leader>q <action>(CloseContent)
+
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" Go to code
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+" not really needed since we have default Ctrl+0 and Ctrl + I
+nmap <leader>gf <Action>(Back)
+nmap <leader>gb <Action>(Forward)
+" nmap <C-o> <Action>(Back)
+" nmap <C-i> <Action>(Forward)
+" file navigation
+
+nnoremap gj :action MethodDown <CR>
+nnoremap gk :action MethodUp <CR>
+
+" Git windows
+map <leader>gc <Action>(CheckinProject)
+map <leader>gs <Action>(ActivateVersionControlToolWindow)
+map <leader>gb <Action>(Git.Branches)
+
+" Errors
+
+let g:WhichKeyDesc_errors = "<leader>e Error navigation"
+let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
+map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
+let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
+map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+
+
+" TODO
+" noremap <Space>g, mm`m:action JumpToLastChange<CR>
+" noremap <Space>g; mm`m:action JumpToNextChange<CR>
+" noremap <Space>rf :action RecentFiles<CR>
+
+" noremap <Space>nw :action NextProjectWindow<CR>
+" noremap <Space>pw :action PreviousProjectWindow<CR>
+
+" remapping pasting to not overwrite te register - overwritten goes to black hole register
+" are both needed
+vnoremap <Leader>p "_dp
+vnoremap <Leader>P "_dP
+
+" code screenshot (required idea plugin: Code Screenshots)
+nmap \\cs <Action>(one.util.ideaplugin.screenshoter.CopyImageAction)
+
+" menu
+nmap <leader>mm <Action>(MainMenu)
+nmap <leader>ma <Action>(AnalyzeMenu)
+nmap <leader>mb <Action>(BuildMenu)
+nmap <leader>mc <Action>(CodeMenu)
+nmap <leader>mf <Action>(FindMenuGroup)
+nmap <leader>mg <Action>(GoToMenu)
+nmap <leader>ms <Action>(ScopeViewPopupMenu)
+nmap <leader>mt <Action>(EditorTabPopupMenu)
+nmap <leader>mw <Action>(ToolWindowsGroup)
+
+" Example configs
+" https://github.com/sakurawald/.dotfiles/blob/master/ideavim/.ideavimrc
